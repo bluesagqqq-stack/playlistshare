@@ -1,6 +1,6 @@
 name = "playlistshare"
 compatibility_date = "2024-03-26"
-compatibility_flags = ["nodejs_als"]
+compatibility_flags = ["nodejs_als", "nodejs_compat"]
 pages_build_output_dir = ".vercel/output/static"
 
 [[d1_databases]]
