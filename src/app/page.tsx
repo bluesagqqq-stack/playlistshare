@@ -5,6 +5,8 @@ import { SongList } from '@/components/SongList';
 import { LogoutButton } from '@/components/LogoutButton';
 import { Radio } from 'lucide-react';
 
+export const runtime = 'edge';
+
 export default async function Home() {
   const songs = await fetchSongs();
   const bgDisabled = await getBgDisabled();
