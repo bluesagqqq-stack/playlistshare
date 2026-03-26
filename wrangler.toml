@@ -1,0 +1,10 @@
+name = "playlistshare"
+compatibility_date = "2024-03-26"
+compatibility_flags = ["nodejs_als"]
+pages_build_output_dir = ".vercel/output/static"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "playlistshare-db"
+database_id = "9720c10f-3c56-4590-9cd3-a3f40a0f7afe"
+migrations_dir = "drizzle"

@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-neon-pink: #FF007F;
+  --color-neon-purple: #9D00FF;
+  --color-neon-cyan: #00FFFF;
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+:root {
+  --background: #0f0c29;
+  --foreground: #ededed;
+  color-scheme: dark;
+}
+
+body {
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+  background-attachment: fixed;
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 终极解决浏览器 autofill 白底的方法：使用内阴影彻底实心覆盖，并赋予霓虹青色主题，适配整体极客风格 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: #00FFFF !important;
+  caret-color: #00FFFF !important;
+  -webkit-box-shadow: 0 0 0px 1000px #0f0c29 inset !important;
+  box-shadow: 0 0 0px 1000px #0f0c29 inset !important;
+  transition: none !important;
+}
+
+/* Glassmorphism Utilities */
+@utility glass {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@utility glass-panel {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 100%);
+  backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255,255,255,0.2);
+  border-left: 1px solid rgba(255,255,255,0.1);
+  border-right: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+@utility text-glow-pink {
+  text-shadow: 0 0 10px var(--color-neon-pink), 0 0 20px rgba(255, 0, 127, 0.8);
+}
+
+@utility text-glow-purple {
+  text-shadow: 0 0 10px var(--color-neon-purple), 0 0 20px rgba(157, 0, 255, 0.8);
+}
+
+@utility text-glow-cyan {
+  text-shadow: 0 0 10px var(--color-neon-cyan), 0 0 20px rgba(0, 255, 255, 0.8);
+}
+
+@utility shadow-neon-pink {
+  box-shadow: 0 0 10px var(--color-neon-pink), 0 0 20px rgba(255, 0, 127, 0.4);
+}
+
+@utility shadow-neon-purple {
+  box-shadow: 0 0 10px var(--color-neon-purple), 0 0 20px rgba(157, 0, 255, 0.4);
+}
+
+@utility shadow-neon-cyan {
+  box-shadow: 0 0 10px var(--color-neon-cyan), 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+/* Custom Scrollbar for Neon Theme */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 127, 0.5);
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(157, 0, 255, 0.8);
+}
